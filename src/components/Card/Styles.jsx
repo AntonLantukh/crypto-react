@@ -26,10 +26,10 @@ export const StyledCardBody = styled.div`
   flex-direction: column;
 `;
 
-export const CurrencyPrice = styled.td`
+export const TableRow = styled.tr`
   font-size: 12px;
 `;
 
-export const CurrencyChange = styled.td`
+export const TableData = styled.td`
   font-size: 12px;
 `;

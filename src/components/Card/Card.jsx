@@ -3,36 +3,48 @@ import {
   StyledCard,
   StyledCardHeader,
   CurrencyName,
+  CurrencyShortage,
   СryptoImage,
   StyledCardBody,
-  CurrencyPrice,
-  CurrencyChange
+  TableRow,
+  TableData
 } from "./Style";
 
-class Card extends Component {
+export default class Card extends Component {
   render() {
-    const { currency, price } = this.props;
+    const { currency } = this.props;
     return (
       <StyledCard>
         <StyledCardHeader>
           <CurrencyName>Bitcoin</CurrencyName>
+          <CurrencyShortage>BTC</CurrencyShortage>
           <СryptoImage alt="СryptoImage" width="10px" height="10px" />
         </StyledCardHeader>
         <StyledCardBody>
           <table>
-            <tr>
-              <td>Last price</td>
-              <CurrencyPrice>1029.12</CurrencyPrice>
-            </tr>
-            <tr>
-              <td>Last day change</td>
-              <CurrencyChange>16.5%</CurrencyChange>
-            </tr>
+            <TableRow>
+              <TableData>Last price</TableData>
+              <TableData>1029.12</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>Volume 24 hours</TableData>
+              <TableData>1029.12</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>Last hour change</TableData>
+              <TableData>16.5%</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>Last 24 hours change</TableData>
+              <TableData>21.5%</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>Last 7 days change</TableData>
+              <TableData>1.5%</TableData>
+            </TableRow>
           </table>
         </StyledCardBody>
       </StyledCard>
     );
   }
 }
-
-export default Card;
