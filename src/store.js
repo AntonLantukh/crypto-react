@@ -1,20 +1,13 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./ducks";
-import rootSaga from "./sagas";
-import createSagaMiddleware from "redux-saga";
-
-const sagaMiddleware = createSagaMiddleware();
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
 const createAppStore = () => {
   const store = createStore(
     rootReducer,
-    compose(
-      applyMiddleware(sagaMiddleware),
-      window.devToolsExtension ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
-    )
+    composeWithDevTools(applyMiddleware(thunk))
   );
-
-  sagaMiddleware.run(rootSaga);
 
   return store;
 };

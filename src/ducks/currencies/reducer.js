@@ -1,6 +1,6 @@
 import TYPES from "./types";
 
-export const currencies = (initialState = [], action) => {
+export const currencies = (state = [], action) => {
   switch (action.type) {
     case TYPES.FETCH_SUCCESS:
       return {
@@ -12,7 +12,7 @@ export const currencies = (initialState = [], action) => {
   }
 };
 
-export const isLoading = (initialState = false, action) => {
+export const isLoading = (state = false, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
       return {
@@ -34,7 +34,7 @@ export const isLoading = (initialState = false, action) => {
   }
 };
 
-export const isLoaded = (initialState = false, action) => {
+export const isLoaded = (state = false, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
       return {
@@ -56,7 +56,7 @@ export const isLoaded = (initialState = false, action) => {
   }
 };
 
-export const error = (initialState = null, action) => {
+export const error = (state = null, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
       return {
