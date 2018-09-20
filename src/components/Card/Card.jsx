@@ -12,15 +12,24 @@ import {
 
 export default class Card extends Component {
   render() {
-    const { currency } = this.props;
+    const {
+      name,
+      shortage,
+      lastPrice,
+      volume,
+      change1h,
+      change24h,
+      change7d,
+      lastUpdated
+    } = this.props.currency;
     return (
       <StyledCard>
         <StyledCardHeader>
-          <CurrencyName>Bitcoin</CurrencyName>
+          <CurrencyName>{name}</CurrencyName>
           &#8194;/&#8194;
-          <CurrencyShortage>BTC</CurrencyShortage>
+          <CurrencyShortage>{shortage}</CurrencyShortage>
           <img
-            src={require("../../img/btc.png")}
+            src={require(`../../img/${shortage}.png`)}
             alt="СryptoImage"
             width="32px"
             height="32px"
@@ -31,23 +40,27 @@ export default class Card extends Component {
             <tbody>
               <TableRow>
                 <TableData>Last price</TableData>
-                <TableData>1029.12</TableData>
+                <TableData>{lastPrice}</TableData>
               </TableRow>
               <TableRow>
                 <TableData>Volume 24 hours</TableData>
-                <TableData>1029.12</TableData>
+                <TableData>{volume}</TableData>
               </TableRow>
               <TableRow>
                 <TableData>Last hour change</TableData>
-                <TableData>16.5%</TableData>
+                <TableData>{change1h}%</TableData>
               </TableRow>
               <TableRow>
                 <TableData>Last 24 hours change</TableData>
-                <TableData>21.5%</TableData>
+                <TableData>{change24h}%</TableData>
               </TableRow>
               <TableRow>
                 <TableData>Last 7 days change</TableData>
-                <TableData>1.5%</TableData>
+                <TableData>{change7d}%</TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>Last update</TableData>
+                <TableData>{lastUpdated}</TableData>
               </TableRow>
             </tbody>
           </Table>

@@ -4,6 +4,7 @@ import {
   fetchCurrenciesFailure
 } from "./action";
 import { currencies, isLoading, isLoaded, error } from "./reducer";
+import { getActualCurrencies, isFetched, isFetching } from "./selector";
 
 export {
   fetchCurrenciesRequest,
@@ -12,5 +13,8 @@ export {
   currencies,
   isLoading,
   isLoaded,
-  error
+  error,
+  getActualCurrencies,
+  isFetched,
+  isFetching
 };

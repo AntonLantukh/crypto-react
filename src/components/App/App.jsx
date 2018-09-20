@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Card from "../Card";
+import CardList from "../CardList";
 
 class App extends Component {
   render() {
-    return <Card />;
+    return <CardList />;
   }
 }
 
