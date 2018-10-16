@@ -29,7 +29,7 @@ export default class Card extends Component {
           &#8194;/&#8194;
           <CurrencyShortage>{shortage}</CurrencyShortage>
           <img
-            src={require(`../../img/${shortage}.png`)}
+            src={require(`../../img/${shortage.toLowerCase()}.png`)}
             alt="СryptoImage"
             width="32px"
             height="32px"

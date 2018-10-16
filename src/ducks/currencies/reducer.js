@@ -3,10 +3,7 @@ import TYPES from "./types";
 export const currencies = (state = [], action) => {
   switch (action.type) {
     case TYPES.FETCH_SUCCESS:
-      return {
-        ...state,
-        currencies: action.payload
-      };
+      return action.payload;
     default:
       return state;
   }
@@ -15,20 +12,11 @@ export const currencies = (state = [], action) => {
 export const isLoading = (state = false, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
-      return {
-        ...state,
-        isLoading: true
-      };
+      return true;
     case TYPES.FETCH_SUCCESS:
-      return {
-        ...state,
-        isLoading: false
-      };
+      return false;
     case TYPES.FETCH_FAILURE:
-      return {
-        ...state,
-        isLoading: false
-      };
+      return false;
     default:
       return state;
   }
@@ -37,20 +25,11 @@ export const isLoading = (state = false, action) => {
 export const isLoaded = (state = false, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
-      return {
-        ...state,
-        isLoaded: false
-      };
+      return false;
     case TYPES.FETCH_SUCCESS:
-      return {
-        ...state,
-        isLoaded: true
-      };
+      return true;
     case TYPES.FETCH_FAILURE:
-      return {
-        ...state,
-        isLoaded: false
-      };
+      return false;
     default:
       return state;
   }
@@ -59,20 +38,11 @@ export const isLoaded = (state = false, action) => {
 export const error = (state = null, action) => {
   switch (action.type) {
     case TYPES.FETCH_REQUEST:
-      return {
-        ...state,
-        error: null
-      };
+      return null;
     case TYPES.FETCH_SUCCESS:
-      return {
-        ...state,
-        error: null
-      };
+      return null;
     case TYPES.FETCH_FAILURE:
-      return {
-        ...state,
-        error: action.payload
-      };
+      return action.payload;
     default:
       return state;
   }

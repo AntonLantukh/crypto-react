@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.section`
-  width: 220px;
-  height: 230px;
+  width: 260px;
+  height: 260px;
   margin: 20px;
   transition: 0.2s linear;
   border-radius: 20px;

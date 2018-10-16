@@ -8,7 +8,7 @@ import {
   isFetching
 } from "../../ducks/currencies";
 import Spinner from "react-svg-spinner";
-import { SpinnerWrapper } from "./Style";
+import { SpinnerWrapper, CardListWrapper } from "./Style";
 
 const mapStateToProps = state => ({
   currencies: getActualCurrencies(state),
@@ -34,11 +34,11 @@ class CardList extends Component {
 
   renderCards = currencies => {
     return (
-      <div>
+      <CardListWrapper>
         {currencies.map(item => {
           return <Card currency={item} />;
         })}
-      </div>
+      </CardListWrapper>
     );
   };
 
@@ -46,7 +46,7 @@ class CardList extends Component {
     const { currencies, isFetched, isFetching } = this.props;
     return (
       <div>
-        {!isFetching && isFetched
+        {isFetched && !isFetching
           ? this.renderCards(currencies)
           : this.renderSpinner()}
       </div>
